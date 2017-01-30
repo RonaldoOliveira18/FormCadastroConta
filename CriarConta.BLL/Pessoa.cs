@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace BLL
 {
@@ -19,6 +20,44 @@ namespace BLL
                 {
                     throw ex;
                 }
+        }
+
+        public void Atualizar(Entity.Pessoa Pessoa)
+        {
+            try
+            {
+                DAL.Pessoa PessoaDAL = new DAL.Pessoa();
+                PessoaDAL.Atualizar(Pessoa);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Excluir(Entity.Pessoa Pessoa)
+        {
+            try
+            {
+                DAL.Pessoa PessoaDAL = new DAL.Pessoa();
+                PessoaDAL.Excluir(Pessoa);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable Obter(Entity.Pessoa Pessoa)
+        {
+            try
+            {
+                DAL.Pessoa PessoaDAL = new DAL.Pessoa();
+                return PessoaDAL.Obter(Pessoa);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Entity
 {
    public class Pessoa
     {
+        public int cvIdPessoa { get; set; }
         public string ccNome { get; set; }
         public string ccEndereco { get; set; }
         public string ccCidade { get; set; }
@@ -15,10 +16,13 @@ namespace Entity
         public string ccTelefoneCelular { get; set; }
         public string ccTelefoneComercial { get; set; }
         public string ImgComprovResid { get; set; }
+        public byte btImgComprovResid { get; set; }
         public string cvIdEstadoCivil { get; set; }
         public string ccTelefoneResidencial { get; set; }
         public string ccUF { get; set; }
         public string ccEmail { get; set; }
+
+        public string ccNascimento { get; set; }
         public DateTime cdNascimento { get; set; }
     }
 }
