@@ -26,7 +26,8 @@ namespace DAL
                   cmd.Parameters.AddWithValue("@ccCEP", Pessoa.ccCEP);
                   cmd.Parameters.AddWithValue("@ccTelefoneCelular", Pessoa.ccTelefoneCelular);
                   cmd.Parameters.AddWithValue("@ccTelefoneComercial", Pessoa.ccTelefoneComercial);
-                  cmd.Parameters.AddWithValue("@cvIdEstadoCivil", Pessoa.cvIdEstadoCivil);
+                  cmd.Parameters.AddWithValue("@ccRG", Pessoa.ccRG);
+                  cmd.Parameters.AddWithValue("@ccCPF", Pessoa.ccCPF);
                   cmd.Parameters.AddWithValue("@ccTelefoneResidencial", Pessoa.ccTelefoneResidencial);
                   cmd.Parameters.AddWithValue("@ccUF", Pessoa.ccUF);
                   cmd.Parameters.AddWithValue("@ccEmail", Pessoa.ccEmail);
@@ -67,7 +68,8 @@ namespace DAL
             cmd.Parameters.AddWithValue("@ccCEP", Pessoa.ccCEP);
             cmd.Parameters.AddWithValue("@ccTelefoneCelular", Pessoa.ccTelefoneCelular);
             cmd.Parameters.AddWithValue("@ccTelefoneComercial", Pessoa.ccTelefoneComercial);
-            cmd.Parameters.AddWithValue("@cvIdEstadoCivil", Pessoa.cvIdEstadoCivil);
+            cmd.Parameters.AddWithValue("@ccRG", Pessoa.ccRG);
+            cmd.Parameters.AddWithValue("@ccCPF", Pessoa.ccCPF);
             cmd.Parameters.AddWithValue("@ccTelefoneResidencial", Pessoa.ccTelefoneResidencial);
             cmd.Parameters.AddWithValue("@ccUF", Pessoa.ccUF);
             cmd.Parameters.AddWithValue("@ccEmail", Pessoa.ccEmail);

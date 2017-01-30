@@ -160,7 +160,8 @@
                 Pessoa.ccTelefoneCelular = $("#txtCelular").val();
                 Pessoa.ccTelefoneComercial = $("#txtComercial").val();
                 Pessoa.ccTelefoneResidencial = $("#txtResidencial").val();
-                Pessoa.cvIdEstadoCivil = $("#txtEstadoCivil").val
+                Pessoa.ccCPF = $("#txtCPF").val();
+                Pessoa.ccRG = $("#txtRG").val();
                 Pessoa.ccUF = $("#txtUF").val();
                 Pessoa.ccEmail = $("#txtEmail").val();
                 Pessoa.ccNascimento = $("#txtDataNascimento").val();
@@ -216,7 +217,8 @@
             $("#txtCelular").val(objdata.ccTelefoneCelular);
             $("#txtComercial").val(objdata.ccTelefoneComercial);
             $("#txtResidencial").val(objdata.ccTelefoneResidencial);
-            $("#txtEstadoCivil").val(objdata.cvIdEstadoCivil);
+            $("#txtCPF").val(objdata.ccCPF);
+            $("#txtRG").val(objdata.ccRG);
             $("#txtUF").val(objdata.ccUF);
             $("#txtEmail").val(objdata.ccEmail);
             $("#txtDataNascimento").val(objdata.cdNascimento);

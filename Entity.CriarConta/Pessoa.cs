@@ -21,8 +21,9 @@ namespace Entity
         public string ccTelefoneResidencial { get; set; }
         public string ccUF { get; set; }
         public string ccEmail { get; set; }
-
         public string ccNascimento { get; set; }
         public DateTime cdNascimento { get; set; }
+        public string ccRG { get; set; }
+        public string ccCPF { get; set; }
     }
 }
