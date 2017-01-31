@@ -16,8 +16,6 @@ public partial class ExibirImagem : System.Web.UI.Page
         {
             int idPessoa = Convert.ToInt32(Request.QueryString["idPessoa"]);
 
-
-            //nomeArquivo], [horaUpload], [MIME], [imagem]
             using (SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString))
             {
                 const string SQL = "SELECT [ImgComprovResid] FROM [tb_pessoa] WHERE [cvIdPessoa] = @id";
@@ -29,7 +27,6 @@ public partial class ExibirImagem : System.Web.UI.Page
 
                 if (myReader.Read())
                 {
-                    //Response.ContentType = myReader["MIME"].ToString();
                     Response.BinaryWrite((byte[])myReader["ImgComprovResid"]);
                 }
 

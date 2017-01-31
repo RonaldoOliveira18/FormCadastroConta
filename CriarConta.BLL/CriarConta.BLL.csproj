@@ -47,8 +47,8 @@
       <Project>{3cee2140-3589-402d-90b2-5ba896612ac8}</Project>
       <Name>CriarConta.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entity.CriarConta\CriarConta.Entity.csproj">
-      <Project>{4be29ad9-e706-41e0-835d-751911eef7c4}</Project>
+    <ProjectReference Include="..\CriarConta.Entity\CriarConta.Entity.csproj">
+      <Project>{51a749bd-8d7e-4c04-99c3-6688de0501ad}</Project>
       <Name>CriarConta.Entity</Name>
     </ProjectReference>
   </ItemGroup>
