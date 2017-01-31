@@ -25,5 +25,7 @@ namespace Entity
         public DateTime cdNascimento { get; set; }
         public string ccRG { get; set; }
         public string ccCPF { get; set; }
+
+        public Byte[] ccImage { get; set; }
     }
 }

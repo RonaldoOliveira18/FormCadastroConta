@@ -74,6 +74,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@ccUF", Pessoa.ccUF);
             cmd.Parameters.AddWithValue("@ccEmail", Pessoa.ccEmail);
             cmd.Parameters.AddWithValue("@cdNascimento", Pessoa.cdNascimento);
+            cmd.Parameters.AddWithValue("@ccImage", Pessoa.ccImage);
             cmd.Parameters.Add("@NewId", SqlDbType.Int).Direction = ParameterDirection.Output;
             cmd.CommandType = CommandType.StoredProcedure;
             con.Open();
@@ -111,6 +112,35 @@ namespace DAL
             {
                 cmd.ExecuteNonQuery();
             //if (i > 0)
+                //    MessageBox.Show("Registro incluido com sucesso!");
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void AtualizarAnexo(Entity.Pessoa Pessoa)
+        {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
+            int ret = 0;
+
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand("UPD_PessoaAnexo", con);
+            cmd.Parameters.AddWithValue("@cvIdPessoa", Pessoa.cvIdPessoa);
+            cmd.Parameters.AddWithValue("@ccImage", Pessoa.ccImage);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                //if (i > 0)
                 //    MessageBox.Show("Registro incluido com sucesso!");
             }
             catch (Exception ex)

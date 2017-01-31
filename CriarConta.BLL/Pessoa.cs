@@ -35,6 +35,19 @@ namespace BLL
             }
         }
 
+        public void AtualizarAnexo(Entity.Pessoa Pessoa)
+        {
+            try
+            {
+                DAL.Pessoa PessoaDAL = new DAL.Pessoa();
+                PessoaDAL.AtualizarAnexo(Pessoa);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void Excluir(Entity.Pessoa Pessoa)
         {
             try
@@ -59,5 +72,6 @@ namespace BLL
                 throw ex;
             }
         }
+
     }
 }

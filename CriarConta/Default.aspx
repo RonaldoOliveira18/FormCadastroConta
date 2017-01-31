@@ -12,6 +12,10 @@
         {
             width: 294px;
         }
+        .style3
+        {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -20,6 +24,12 @@
             <tr>
                 <td bgcolor="#FFFFCA" class="style1" colspan="2" style="text-align: center">
                     Envie somente arquivos no formato .GIF ou .JPG</td>
+            </tr>
+            <tr>
+                <td class="style3" colspan="2">
+                    <asp:HyperLink ID="hplnkExibeImagem" runat="server" 
+                        style="color: #0033CC; font-family: 'Trebuchet MS'; font-size: large">Clique aqui para Exibir a Imagem</asp:HyperLink>
+&nbsp;</td>
             </tr>
             <tr>
                 <td class="style3">Nome do Arquivo</td>

@@ -313,6 +313,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="CriarConta.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="ExibirImagem.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -425,6 +426,7 @@
     <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
     <Content Include="Content\bootstrap-datepicker.min.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
+    <Content Include="Handler\Arquivo.ashx" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -442,6 +444,13 @@
     </Compile>
     <Compile Include="Ajax.aspx.designer.cs">
       <DependentUpon>Ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExibirImagem.aspx.cs">
+      <DependentUpon>ExibirImagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Handler\Arquivo.ashx.cs">
+      <DependentUpon>Arquivo.ashx</DependentUpon>
     </Compile>
     <Compile Include="CriarConta.aspx.cs">
       <DependentUpon>CriarConta.aspx</DependentUpon>

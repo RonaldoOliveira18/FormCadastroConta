@@ -45,7 +45,7 @@ public partial class _Default : System.Web.UI.Page
     //        {
     //            try
     //            {
-    //                const string SQL = "INSERT INTO [Imagens] ([nomeArquivo], [horaUpload], [MIME], [imagem]) VALUES (@nomeArquivo, @horaUpload, @MIME, @imagem)";
+    //                const string SQL = "INSERT INTO [Imagens] ([nomeArquivo], [horaUpload], [MIME], [imagem])VALUES(@nomeArquivo, @horaUpload, @MIME, @imagem) SELECT SCOPE_IDENTITY()";
     //                SqlCommand cmd = new SqlCommand(SQL, Conn);
     //                cmd.Parameters.AddWithValue("@nomeArquivo", txtNomeArquivo.Text.Trim());
     //                cmd.Parameters.AddWithValue("@MIME", fileType);
@@ -58,7 +58,8 @@ public partial class _Default : System.Web.UI.Page
     //                lblmsg.Text = "<br />Arquivo enviado com sucesso <br />";
 
     //                Conn.Open();
-    //                cmd.ExecuteNonQuery();
+    //                int imagemID = Convert.ToInt16(cmd.ExecuteScalar());
+    //                hplnkExibeImagem.NavigateUrl = "~/ExibirImagem.aspx?ID=" + imagemID.ToString();
     //                Conn.Close();
     //            }
     //            catch

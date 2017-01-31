@@ -97,34 +97,56 @@ namespace CriarConta
         }
 
         [System.Web.Services.WebMethod]
-        public static string upload(HttpContext htp1)
+
+        public static void upload(HttpContext context)
         {
 
-            HttpPostedFile myFile = htp1.Request.Files["MyFile"];
-            bool isUploaded = false;
-            string message = "File upload failed";
-
-            if (myFile != null && myFile.ContentLength != 0)
+            foreach (string file in context.Request.Files)
             {
-                //string pathForSaving = Server.MapPath("~/Uploads");
-                //if (this.CreateFolderIfNeeded(pathForSaving))
-                //{
-                //    try
-                //    {
-                //        myFile.SaveAs(Path.Combine(pathForSaving, myFile.FileName));
-                //        isUploaded = true;
-                //        message = "File uploaded successfully!";
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        message = string.Format("File upload failed: {0}", ex.Message);
-                //    }
-                //}
+                HttpPostedFile hpf = context.Request.Files[file];
+
+                string savedFileName = Path.Combine(context.Server.MapPath("~/App_Data"), Path.GetFileName(hpf.FileName));
+                hpf.SaveAs(savedFileName);
+
             }
 
-            //return Json(new { isUploaded = isUploaded, message = message }, "text/html");
-            return "S";
+            //Returns json
+            //return context.Response.Write("{\"name\":\"" + r[0].Name + "\",\"type\":\"" + r[0].Type + "\",\"size\":\"" + string.Format("{0} bytes", r[0].Length) + "\"}");
+
         }
+
+
+
+
+
+        //public static string upload()
+        //{
+
+        //    //HttpPostedFile myFile = htp1.Request.Files["MyFile"];
+        //    bool isUploaded = false;
+        //    string message = "File upload failed";
+
+        //    //if (myFile != null && myFile.ContentLength != 0)
+        //    //{
+        //        //string pathForSaving = Server.MapPath("~/Uploads");
+        //        //if (this.CreateFolderIfNeeded(pathForSaving))
+        //        //{
+        //        //    try
+        //        //    {
+        //        //        myFile.SaveAs(Path.Combine(pathForSaving, myFile.FileName));
+        //        //        isUploaded = true;
+        //        //        message = "File uploaded successfully!";
+        //        //    }
+        //        //    catch (Exception ex)
+        //        //    {
+        //        //        message = string.Format("File upload failed: {0}", ex.Message);
+        //        //    }
+        //        //}
+        //    //}
+
+        //    //return Json(new { isUploaded = isUploaded, message = message }, "text/html");
+        //    return "S";
+        //}
 
         public Entity.Pessoa objJSON = new Entity.Pessoa();
         public Entity.Pessoa rows = new Entity.Pessoa();
