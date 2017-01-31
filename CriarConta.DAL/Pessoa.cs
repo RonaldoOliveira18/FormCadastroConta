@@ -152,6 +152,32 @@ namespace DAL
             da.Fill(dt);
             return dt;
         }
+
+        public byte[] ObterImagem(Entity.Pessoa Pessoa)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
+            Entity.Pessoa objPessoaEntity = new Entity.Pessoa();
+
+            SqlConnection con = new SqlConnection(connectionString);
+  
+            SqlCommand cmd = new SqlCommand("SEL_Imagem", con);
+            cmd.Parameters.AddWithValue("@cvIdPessoa", Pessoa.cvIdPessoa);
+
+            con.Open();
+            SqlDataReader myReader = cmd.ExecuteReader();
+
+            if (myReader.Read())
+            {
+                 objPessoaEntity.ccImage = (byte[])myReader["ImgComprovResid"];
+                 
+            }
+
+            myReader.Close();
+            con.Close();
+
+            return objPessoaEntity.ccImage;
+        }
+
         }
     
     }

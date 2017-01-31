@@ -15,28 +15,23 @@ public partial class ExibirImagem : System.Web.UI.Page
         try
         {
             int idPessoa = Convert.ToInt32(Request.QueryString["idPessoa"]);
+            BLL.Pessoa objPessoaBLL = new BLL.Pessoa();
+            Entity.Pessoa objPessoaEntity = new Entity.Pessoa();
 
-            using (SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString))
-            {
-                const string SQL = "SELECT [ImgComprovResid] FROM [tb_pessoa] WHERE [cvIdPessoa] = @id";
-                SqlCommand myCommand = new SqlCommand(SQL, Conn);
-                myCommand.Parameters.AddWithValue("@id", idPessoa);
+            objPessoaEntity.cvIdPessoa = idPessoa;
 
-                Conn.Open();
-                SqlDataReader myReader = myCommand.ExecuteReader();
+            objPessoaEntity.ccImage = objPessoaBLL.ObterImagem(objPessoaEntity);
 
-                if (myReader.Read())
-                {
-                    Response.BinaryWrite((byte[])myReader["ImgComprovResid"]);
-                }
+            if (objPessoaEntity.ccImage != null) { 
 
-                myReader.Close();
-                Conn.Close();
+            Response.BinaryWrite(objPessoaEntity.ccImage);
             }
         }
+
+
         catch (Exception ex)
         {
             Response.Write(ex.ToString());
-        } 
+        }
     }
 }

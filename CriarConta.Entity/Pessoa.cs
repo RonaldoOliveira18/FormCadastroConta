@@ -26,6 +26,6 @@ namespace Entity
         public string ccRG { get; set; }
         public string ccCPF { get; set; }
         public char ccRet { get; set; }
-        public Byte[] ccImage { get; set; }
+        public byte[] ccImage { get; set; }
     }
 }

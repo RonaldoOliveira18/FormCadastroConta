@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.IO;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace BLL
 {
@@ -66,6 +69,19 @@ namespace BLL
             {
                 DAL.Pessoa PessoaDAL = new DAL.Pessoa();
                 return PessoaDAL.Obter(Pessoa);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public byte[] ObterImagem(Entity.Pessoa Pessoa)
+        {
+            try
+            {
+                DAL.Pessoa PessoaDAL = new DAL.Pessoa();
+                return PessoaDAL.ObterImagem(Pessoa);
             }
             catch (Exception ex)
             {
