@@ -22,17 +22,12 @@
     <script src="Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
     <script src="Scripts/jQuery.FileUpload/jquery.fileupload-ui.js"></script>
     <script src="Scripts/jQuery.FileUpload/jquery.iframe-transport.js"></script>
-    <script src="view-source:https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"> </script>
-
-
+    <script src="Scripts/jquery.inputmask.bundle.js"></script>
 
     <%--DatePicker--%>
     <script src="Scripts/bootstrap-datepicker.js"></script>
 </head>
-
-
 <body>
-
     <div class="container">
         <div class="masthead">
             <h3 class="text-muted" style="color: blue">Teste Itaú - Abertura de Conta</h3>
@@ -54,7 +49,7 @@
                     <div class="form-group">
                         <label for="txtNomeCompleto" class="col-sm-3 col-md-1 control-label" style="text-align: left">Nome:</label>
                         <div class="col-sm-4 col-md-4">
-                            <input type="text" id="txtNomeCompleto" class="form-control" placeholder="Preencha seu nome ">
+                            <input type="text" id="txtNomeCompleto" class="form-control" placeholder="Preencha seu nome " required>
                         </div>
                         <label for="txtEmail" class="col-sm-1 col-md-2 control-label">Email:</label>
                         <div class="col-sm-4 col-md-3">
@@ -65,25 +60,25 @@
                 <div class="row">
                     <div class="form-group col-sm-3 col-md-2 col-sm-4 col-md-3 col-lg-3">
                         <label for="txtEndereco">Endereco</label>
-                        <input type="text" class="form-control" id="txtEndereco" placeholder="Preencha o Endereco">
+                        <input type="text" class="form-control" id="txtEndereco" placeholder="Preencha o Endereco" required>
                     </div>
                     <div class="form-group col-xs-6 col-sm-4 col-md-3 col-lg-3">
                         <label for="txtCidade">Cidade</label>
-                        <input type="text" class="form-control" id="txtCidade" placeholder="Preencha a Cidade">
+                        <input type="text" class="form-control" id="txtCidade" placeholder="Preencha a Cidade" required>
                     </div>
                     <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2">
                         <label for="txtUF">UF</label>
-                        <input type="text" class="form-control" id="txtUF" maxlength="2" placeholder="Preencha o Estrado">
+                        <input type="text" class="form-control" id="txtUF" maxlength="2" placeholder="Preencha o Estrado" required>
                     </div>
                     <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2">
                         <label for="txtCep">CEP</label>
-                        <input type="text" class="form-control" id="txtCEP" placeholder="Preencha o CEP Sem Tracos" onkeypress="return MM_formtCep(event,this,'#####-###');" size="10" maxlength="9">
+                        <input type="text" class="form-control" id="txtCEP" placeholder="Preencha o CEP Sem Tracos" onkeypress="return MM_formtCep(event,this,'#####-###');" size="10" maxlength="9" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2 ">
                         <label for="txtCelular">Tel. Celular</label>
-                        <input type="text" class="form-control" id="txtCelular" placeholder="(00)00000-0000" maxlength="15">
+                        <input type="text" class="form-control" id="txtCelular" placeholder="(00)00000-0000" maxlength="15" required>
                     </div>
                     <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2">
                         <label for="txtComercial">Tel. Comercial</label>
@@ -101,8 +96,6 @@
                     </div>
                 </div>
                 <div class="row">
-
-
                     <div class="form-group">
                         <label for="txtNomeCompleto" class="col-sm-3 col-md-3 control-label">Enviar Comprovante de Residencia:</label>
                         <div class="col-sm-4 col-md-4">
@@ -285,8 +278,6 @@
             }
 
             function Excluir() {
-
-
                 var idexcluir = $("#idPessoa").val();
 
                 var objJSONEnvio = { cvIdPessoa: idexcluir }
@@ -364,7 +355,6 @@
                     return false;
                 }
             }
-
 
             function OnSuccess(response) {
 
@@ -459,8 +449,7 @@
                 id('txtResidencial').onkeypress = function () {
                     mascara(this, mtel);
                 }
-            }
-
+            }
         </script>
 
     </form>

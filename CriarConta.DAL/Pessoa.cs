@@ -10,13 +10,10 @@ using System.Configuration;
 namespace DAL
 {
     public class Pessoa
-    {
-
-        public void Criar(Entity.Pessoa Pessoa)
+    {        public void Criar(Entity.Pessoa Pessoa)
         {
          
             string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
-            int ret = 0;
 
                   SqlConnection con = new SqlConnection(connectionString);
                   SqlCommand cmd = new SqlCommand("INS_Pessoa", con);
@@ -40,12 +37,10 @@ namespace DAL
                   {
                       cmd.ExecuteNonQuery();
                       Pessoa.cvIdPessoa = Convert.ToInt32(cmd.Parameters["@NewId"].Value);
-                      //if (i > 0)
-                      //    MessageBox.Show("Registro incluido com sucesso!");
                   }
                   catch (Exception ex)
                   {
-                      //MessageBox.Show("Erro: " + ex.ToString());
+                      Pessoa.ccRet = 'N';
                   }
                   finally
                   {
@@ -55,9 +50,7 @@ namespace DAL
 
         public void Atualizar(Entity.Pessoa Pessoa)
         {
-
             string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
-            int ret = 0;
 
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("UPD_Pessoa", con);
@@ -83,12 +76,11 @@ namespace DAL
             {
                 cmd.ExecuteNonQuery();
                 Pessoa.cvIdPessoa = Convert.ToInt32(cmd.Parameters["@NewId"].Value);
-                //if (i > 0)
-                //    MessageBox.Show("Registro incluido com sucesso!");
+
             }
             catch (Exception ex)
             {
-                
+                Pessoa.ccRet = 'N';
             }
             finally
             {
@@ -98,9 +90,7 @@ namespace DAL
 
         public void Excluir(Entity.Pessoa Pessoa)
         {
-
             string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
-            int ret = 0;
 
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("DEL_Pessoa", con);
@@ -111,12 +101,10 @@ namespace DAL
             try
             {
                 cmd.ExecuteNonQuery();
-            //if (i > 0)
-                //    MessageBox.Show("Registro incluido com sucesso!");
             }
             catch (Exception ex)
             {
-
+                Pessoa.ccRet = 'N';
             }
             finally
             {
@@ -126,9 +114,7 @@ namespace DAL
 
         public void AtualizarAnexo(Entity.Pessoa Pessoa)
         {
-
             string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
-            int ret = 0;
 
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("UPD_PessoaAnexo", con);
@@ -140,12 +126,10 @@ namespace DAL
             try
             {
                 cmd.ExecuteNonQuery();
-                //if (i > 0)
-                //    MessageBox.Show("Registro incluido com sucesso!");
             }
             catch (Exception ex)
             {
-
+                Pessoa.ccRet = 'N';
             }
             finally
             {
@@ -155,7 +139,6 @@ namespace DAL
 
         public DataTable Obter(Entity.Pessoa Pessoa)
         {
-
             string connectionString = ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString;
 
             SqlConnection con = new SqlConnection(connectionString);

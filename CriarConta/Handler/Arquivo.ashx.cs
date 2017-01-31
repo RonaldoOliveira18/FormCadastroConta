@@ -11,7 +11,6 @@ namespace CriarConta
     /// </summary>
     public class Arquivo : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             foreach (string file in context.Request.Files)
@@ -36,8 +35,6 @@ namespace CriarConta
             }
 
         }
-
-
         public bool IsReusable
         {
             get
