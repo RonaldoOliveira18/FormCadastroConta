@@ -49,18 +49,18 @@
                     <div class="form-group">
                         <label for="txtNomeCompleto" class="col-sm-3 col-md-1 control-label" style="text-align: left">Nome:</label>
                         <div class="col-sm-4 col-md-4">
-                            <input type="text" id="txtNomeCompleto" class="form-control" placeholder="Preencha seu nome " required>
+                            <input type="text" id="txtNomeCompleto" class="form-control" placeholder="Preencha seu nome" required>
                         </div>
-                        <label for="txtEmail" class="col-sm-1 col-md-2 control-label">Email:</label>
+                        <label for="txtEmail" class="col-sm-1 col-md-2 control-label">E-mail:</label>
                         <div class="col-sm-4 col-md-3">
-                            <input type="email" class="form-control" id="txtEmail" placeholder="Preencha seu email">
+                            <input type="email" class="form-control" id="txtEmail" placeholder="Preencha seu e-mail">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-3 col-md-2 col-sm-4 col-md-3 col-lg-3">
-                        <label for="txtEndereco">Endereco</label>
-                        <input type="text" class="form-control" id="txtEndereco" placeholder="Preencha o Endereco" required>
+                        <label for="txtEndereco">Endereço</label>
+                        <input type="text" class="form-control" id="txtEndereco" placeholder="Preencha o Endereço" required>
                     </div>
                     <div class="form-group col-xs-6 col-sm-4 col-md-3 col-lg-3">
                         <label for="txtCidade">Cidade</label>
@@ -68,11 +68,11 @@
                     </div>
                     <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2">
                         <label for="txtUF">UF</label>
-                        <input type="text" class="form-control" id="txtUF" maxlength="2" placeholder="Preencha o Estrado" required>
+                        <input type="text" class="form-control" id="txtUF" maxlength="2" placeholder="Preencha o Estado" required>
                     </div>
                     <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2">
                         <label for="txtCep">CEP</label>
-                        <input type="text" class="form-control" id="txtCEP" placeholder="Preencha o CEP Sem Tracos" onkeypress="return MM_formtCep(event,this,'#####-###');" size="10" maxlength="9" required>
+                        <input type="text" class="form-control" id="txtCEP" placeholder="Preencha o CEP" onkeypress="return MM_formtCep(event,this,'#####-###');" size="10" maxlength="9" required>
                     </div>
                 </div>
                 <div class="row">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="row">
                     <div class="form-group">
-                        <label for="txtNomeCompleto" class="col-sm-3 col-md-3 control-label">Enviar Comprovante de Residencia:</label>
+                        <label for="txtNomeCompleto" class="col-sm-3 col-md-3 control-label">Enviar Comprovante de Residência:</label>
                         <div class="col-sm-4 col-md-4">
                             <input id="fu-my-simple-upload" name="Imagens do Imóvel" class="input-file" type="file" style="display: none">
 
@@ -166,11 +166,11 @@
                     <div class="row">
                         <div class="form-group col-sm-3 col-md-2 col-sm-4 col-md-3 col-lg-3">
                             <label for="txtEndereco">CPF</label>
-                            <input type="text" class="form-control" id="txtCPF" placeholder="Preencha o Endereco" onkeypress="return MM_formtCep(event,this,'###.###.###-##');" maxlength="14">
+                            <input type="text" class="form-control" id="txtCPF" placeholder="Preencha o CPF" onkeypress="return MM_formtCep(event,this,'###.###.###-##');" maxlength="14">
                         </div>
                         <div class="form-group col-xs-6 col-sm-4 col-md-3 col-lg-3">
                             <label for="txtCidade">RG</label>
-                            <input type="text" class="form-control" id="txtRG" placeholder="Preencha a Cidade" onkeypress="return MM_formtCep(event,this,'##.###.###-#');" maxlength="14">
+                            <input type="text" class="form-control" id="txtRG" placeholder="Preencha o RG" onkeypress="return MM_formtCep(event,this,'##.###.###-#');" maxlength="14">
                         </div>
                     </div>
             </section>
